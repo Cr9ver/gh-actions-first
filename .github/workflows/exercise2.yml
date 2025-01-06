@@ -1,4 +1,4 @@
-name: Deployment EX
+name: Deployment EX2
 on: workflow_dispatch
 jobs:
     lint:
