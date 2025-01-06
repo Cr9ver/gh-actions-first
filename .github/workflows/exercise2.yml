@@ -1,0 +1,33 @@
+name: Deployment EX
+on: workflow_dispatch
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get code 
+              uses: actions/checkout@v4 
+            - name: Install dependencies 
+              run: npm ci 
+            - name: Lint 
+              run: npm run lint 
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get code 
+              uses: actions/checkout@v4 
+            - name: Install dependencies 
+              run: npm ci 
+            - name: Test code 
+              run: npm test 
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get code 
+              uses: actions/checkout@v4 
+            - name: Install dependencies 
+              run: npm ci  
+            - name: 
+              run: npm run build 
+            - name: Simulate code deployment
+              run: echo "Deploying application...."
+
